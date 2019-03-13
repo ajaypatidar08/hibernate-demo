@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="beans">
+<class name="Company" table="can">
+<id name="cid" type="int">
+<generator class="assigned"></generator>
+
+</id>
+<property name="cname" length="15"></property>
+<set name="comp" cascade="all" inverse="true">
+<key column="cid"></key>
+<one-to-many class="beans.Employee"/>
+</set>
+
+
+
+
+</class>
+
+
+
+
+
+
+</hibernate-mapping>
